@@ -29,7 +29,7 @@ api.add_resource(Birds, '/birds')
 class BirdByID(Resource):
 
     def get(self, id):
-        bird = db.session.get(Bird, id)
+        bird = db.session.get(Bird, id).to_dict()
         return bird
 
 
