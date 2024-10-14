@@ -24,3 +24,13 @@ class Birds(Resource):
 
 
 api.add_resource(Birds, '/birds')
+
+
+class BirdByID(Resource):
+
+    def get(self, id):
+        bird = db.session.get(Bird, id)
+        return bird
+
+
+api.add_resource(BirdByID, '/birds/<int:id>')
